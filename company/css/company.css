@@ -1,0 +1,87 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #5555fe !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0px;
+}
+.main-box{
+    width: 80%;
+    height: auto;
+    border-radius: 20px;
+    padding: 20px;
+}
+.main-box .navbar .navbar-brand{
+    font-size: 25px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #FC91BC;
+}
+
+.main-box .navbar .navbar-brand:hover{
+    color: #FC91BC;
+}
+.main-box .navbar .nav-link{
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #FC91BC !important;
+}
+.main-box .navbar .btn{
+    background-color: #FC91BC !important;
+    color: #ffffff !important;
+}
+
+/* loginbox and signup-box codding */
+.main-box .login-box, .main-box .signup-box{
+    width: 80%;
+    padding: 0px 20px;
+}
+
+.main-box .login-box label,.main-box .signup-box label{
+    font-family: sans-serif;
+    color: #FC91BC;
+}
+.main-box .login-box input,.main-box .signup-box input,
+.main-box .signup-box textarea{
+    border: none !important;
+    border-bottom: 2px solid #FC91BC !important;
+    box-shadow: none !important;
+}
+.main-box .login-box button,.main-box .signup-box button{
+    font-family: sans-serif;
+    box-shadow: none !important;
+    font-size: 22px;
+    background-color: #FC91BC;
+    border: none !important;
+}
+
+.main-box .login-box{
+    height: 0;
+    opacity: 0;
+    transition: 1s ease-in;
+    overflow: hidden;
+
+}
+.main-box .login-box.active{
+    height: auto;
+    opacity: 1;
+}
+ .main-box .signup-box{
+    height: 0;
+    opacity: 0;
+    transition: 1s ease-in;
+    overflow: hidden;
+ }
+ .main-box .signup-box.active{
+    height: auto;
+    opacity: 1;
+}
+
+ 

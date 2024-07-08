@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #66bb77;
+}
+.input-group-text{
+    background-color: #05a6ff !important;
+    color: #ffffff  !important;
+    font-weight: bold !important;
+    font-size: 18px !important;
+}
+.btn{
+    background-color: #05a6ff !important;
+    color: #ffffff  !important;
+    font-weight: bold !important;
+    font-size: 18px !important; 
+}
+.form-control, .form-select{
+    box-shadow: none !important;
+}

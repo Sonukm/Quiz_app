@@ -1,0 +1,348 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.side-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 218px;
+    height: 100vh;
+    background-color: #263159;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    border-right: 1px solid #263159;
+    transition: 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    background-image: url('../images/user.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    background-color: aliceblue;
+    margin-top: 20px;
+
+}
+
+.side-nav ul {
+    width: 100%;
+    margin: 20px 0px 0px;
+    border-radius: 0px !important;
+}
+
+.side-nav ul li {
+    border-radius: 0px !important;
+    width: 100%;
+    margin: 10px 0px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+.side-nav ul li i {
+    margin-right: 15px;
+}
+
+.side-nav ul li:hover {
+    background-color: #fff;
+    color: rgb(51, 50, 50);
+    ;
+}
+
+.side-nav button {
+    position: absolute;
+    bottom: 0%;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    outline: none;
+
+}
+
+.side-nav button:hover {
+    background-color: #909bc1;
+}
+
+/* start main-box codding */
+
+.main-box .list-group li {
+    border-radius: 0 !important;
+    background-color: #263159;
+    color: #fff;
+}
+
+
+.main-box .teacher-box .content-box {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-box .teacher-box .content-box .number-box {
+    width: 120px;
+    height: 120px;
+    border: 5px solid #263159;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* end main-box codding */
+/* start model coding */
+.user-profile-box .modal-header {
+    background-color: #F161c0;
+    color: #fff;
+}
+
+.user-profile-box .profile-box {
+    width: 100%;
+    height: 280px;
+    position: relative;
+    background-color: #f2f2f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.user-profile-box .profile-box button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 35px;
+}
+
+.user-profile-box .profile-box input {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 50px;
+    opacity: 0;
+}
+
+.user-profile-box .date-box {
+    width: 100%;
+    height: 140px;
+    background-color: #f2f2f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user-profile-box .date-box h3 {
+    font-weight: bold;
+}
+
+.user-profile-box .date-box .icon-box {
+    width: 100%;
+    height: 40px;
+    background-color: #F161c0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.user-profile-box .date-box .icon-box i {
+
+    font-size: 35px;
+}
+
+i {
+    cursor: pointer;
+}
+
+.user-profile-box .date-box h1 {
+    font-weight: bold;
+    font-size: 45px;
+}
+
+.user-profile-box .modal-footer .modal-edit {
+    width: 100px;
+    background-color: #F161c0;
+    color: #fff;
+}
+
+.user-profile-box .profile-box .uplode-box {
+    width: 150px;
+    height: 150px;
+    background-image: url(../images/user.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+
+}
+
+/* end model coding */
+
+/* visible-question codding start */
+.visible-question i {
+    font-size: 22px;
+}
+
+.visible-question span {
+    font-size: 22px;
+}
+
+.visible-question .ngreen {
+    color: green;
+    font-size: 22px;
+}
+
+.visible-question .Qblue {
+    color: rgb(52, 36, 197);
+
+}
+
+/* visible-question codding end */
+/* start certificate codding */
+
+
+.certificate-main {
+    width: 800px;
+    height: 1100px;
+    position: absolute;
+    top: 60%;
+    left: 25%;
+    transform: translate(-0%, -0%);
+    border: 3px groove #284F9C;
+    opacity: 0;
+    z-index: -1000;
+   
+}
+.certificate-main.active{
+    z-index: 1000;
+    opacity: 1;
+    animation-name: slideInDown;
+    animation-duration: 1s;
+}
+
+.certificate-main img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.certificate-main .main-box {
+    width: 100%;
+    height: 84%;
+    position: absolute;
+    top: 95px;
+    left: 0%;
+    padding: 0px 50px;
+   
+
+}
+
+.certificate-main .main-box .name-box {
+    width: 100%;
+    height: 200px;
+    border: 2px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.certificate-main  .img-box {
+    width: 30%;
+    height: 92%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.certificate-main .main-box .img-box p {
+    font-weight: bold;
+}
+
+.certificate-main  .signature-box {
+    width: 100%;
+    height: 150px;
+    border: 2px solid #2c2c2c;
+    display: flex;
+    justify-content: center;
+
+}
+
+.certificate-main  .signature-box .sign-box {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    
+}
+
+.certificate-main .certificate-close-btn{
+    position: absolute;
+    top: -25px;
+    right: -25px;
+    font-size: 18px;
+    color: rgb(247, 15, 15);
+    box-shadow: none !important;
+}
+.certificate-main .certificate-close-btn:hover{
+    color: #e51010;
+}
+
+/* end certificate codding */
+
+/* start toggler codding */
+.toggler-box {
+    opacity: 0;
+
+}
+
+.toggler-box .toggler-icon {
+    position: fixed;
+    padding: 15px;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    background-color: black;
+    color: #fff;
+    border-radius: 10px;
+}
+
+/* end toggler codding */
+@media(max-width:991px) {
+    .side-nav {
+        display: block;
+        transform: translateX(-255px);
+    }
+
+    .side-nav.active {
+        display: block;
+        transform: translateX(0px);
+    }
+
+    .toggler-box {
+        opacity: 1;
+
+    }
+}

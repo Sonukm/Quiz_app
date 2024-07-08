@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- start cdn link fontOwsem -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- end cdn link fontOwsem -->
+    <!-- start css files and link -->
+
+    <link rel="stylesheet" href="../common/css/animate.min.css">
+    <link rel="stylesheet" href="../common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../dashboard/css/dashboard.css">
+    <!-- end css files and link -->
+    <!-- start js files and link -->
+    <script src="../common/js/bootstrap.bundle.min.js"></script>
+    <script src="../common/js/sweetalert.min.js"></script>
+    <!-- end js files and link -->
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div class="toggler-box">
+        <i class="fa-solid fa-bars toggler-icon"></i>
+        <i class="fa-sharp fa-solid fa-xmark toggler-icon  d-none"></i>
+    </div>
+    <div class="side-nav">
+        <div class="profile-pic">
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item"><i class="fa-solid fa-house"></i> &nbsp;Home</li>
+            <li class="list-group-item"><i class="fa-solid fa-house"></i> &nbsp;Home</li>
+            <li class="list-group-item"><i class="fa-solid fa-house"></i> &nbsp;Home</li>
+            <li class="list-group-item"><i class="fa-solid fa-house"></i> &nbsp;Home</li>
+            <li class="list-group-item"><i class="fa-solid fa-house"></i> &nbsp;Home</li>
+        </ul>
+        <button id="logout-btn"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log Out</button>
+    </div>
+    <div class="container-fluid overflow-hidden p-2 main-box">
+        <div class="row">
+            <!-- 2 colume nill rahen gey -->
+            <div class="col-md-0 col-lg-2"></div>
+            <div class="col-md-12 col-lg-10 mt-1 p-0">
+                <ul class="list-group ">
+                    <li class="list-group-item">
+                        <h2 id="brand-name"></h2>
+                    </li>
+                </ul>
+                <!-- regester student and techer detail -->
+                <div class="row mt-3">
+                    <div class="col-md-4 text-center teacher-box">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h4>Teachers</h4>
+                            </li>
+                        </ul>
+                        <div class="content-box">
+                            <div class="number-box">
+                                <h5>200</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center teacher-box">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h4>Students</h4>
+                            </li>
+                        </ul>
+                        <div class="content-box">
+                            <div class="number-box">
+                                <h5>2000</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center teacher-box">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h4>Subject</h4>
+                            </li>
+                        </ul>
+                        <div class="content-box">
+                            <div class="number-box">
+                                <h5>8</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- creat subject accordion start -->
+                <div class="row mt-2">
+                    <div class="col-md-4">
+                        <ul class="list-group">
+                            <li class="list-group text-center">
+                                <h3>Creat Subject</h3>
+                            </li>
+                        </ul>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#creat-Subject">
+                                        Creat Subject
+                                    </button>
+                                </h2>
+                                <div class="accordion-collapse collapse" id="creat-Subject">
+                                    <div class="accordion-body">
+                                        <form>
+                                            <input type="text" placeholder="Subject Name"
+                                                class="form-control subject mb-3">
+                                            <div align="end">
+                                                <button class="btn text-white subject-btn"
+                                                    style="background-color: #263159;">Stor
+                                                    Subject</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- creat subject accordion end -->
+                    <!-- creat question accordion start -->
+                    <div class="col-md-8">
+                        <ul class="list-group">
+                            <li class="list-group text-center">
+                                <h3>Creat Subjet Related Questions</h3>
+                            </li>
+                        </ul>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#creat-Questions">
+                                        Creat Questions
+                                    </button>
+                                </h2>
+                                <div class="accordion-collapse collapse" id="creat-Questions">
+                                    <div class="accordion-body">
+                                        <form id="question-form">
+                                            <select id="choose-subject" class="form-select mb-3">
+                                                <option value="choose subject">Choose Subject</option>
+                                            </select>
+
+                                            <label for="question">1 Enter question Here !</label>
+                                            <input type="text" required class="form-control  mb-3" id="question">
+                                            <!-- option-one start -->
+                                            <label for="option-one">option-one</label>
+                                            <input type="text" required class="form-control  mb-3" id="option-one">
+                                            <!-- option-two start -->
+                                            <label for="option-two">option-two</label>
+                                            <input type="text" required class="form-control  mb-3" id="option-two">
+                                            <!-- option-three start -->
+                                            <label for="option-three">option-three</label>
+                                            <input type="text" required class="form-control  mb-3" id="option-three">
+                                            <!-- option-four start-->
+                                            <label for="option-four">option-four</label>
+                                            <input type="text" required class="form-control  mb-3" id="option-four">
+                                            <!-- correct answear start-->
+                                            <label for="correct answer">correct Answer</label>
+                                            <input type="text" required class="form-control  mb-3" id="correct answer">
+                                            <div align="end">
+                                                <button class="btn text-white" style="background-color: #263159;">Store
+                                                    Questions</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- creat question accordion end -->
+                <!-- show subject accordion start -->
+                <div class="row mt-2">
+                    <div class="col-md-4">
+                        <ul class="list-group">
+                            <li class="list-group text-center">
+                                <h3>Show Subject</h3>
+                            </li>
+                        </ul>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#show-Subject">
+                                        Update And Delete All Subject
+                                    </button>
+                                </h2>
+                                <div class="accordion-collapse collapse" id="show-Subject">
+                                    <div class="accordion-body">
+                                        <div class="visible-subject">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- show subject accordion end -->
+
+                    <!-- Update & Delete Subject Questions question accordion start -->
+                    <div class="col-md-8">
+                        <ul class="list-group">
+                            <li class="list-group text-center">
+                                <h3>Update & Delete Subject Related Questions</h3>
+                            </li>
+                        </ul>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#show-Questions">
+                                        Update & Delete Questions
+                                    </button>
+                                </h2>
+                                <div class="accordion-collapse collapse" id="show-Questions">
+                                    <div class="accordion-body">
+                                        <select id="select-subject" class="form-select mb-3">
+                                            <option value="choose subject">Choose Subject</option>
+                                        </select>
+                                        <div class="visible-question">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  question accordion end -->
+                </div>
+                <!-- Students & Teachers Registration Form accordion start -->
+                <div class="row mt-2">
+                    <div class="col-md-12">
+                        <ul class="list-group">
+                            <li class="list-group text-center">
+                                <h3>Students & Teachers Registration Form</h3>
+                            </li>
+                        </ul>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#registration-Form">
+                                        Registration Form
+                                    </button>
+                                </h2>
+                                <div class="accordion-collapse collapse" id="registration-Form">
+                                    <div class="accordion-body">
+                                        <form class="registration-form">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label for="name">Name</label>
+                                                    <input type="text" required id="name" class="form-control mb-3">
+                                                    <label for="father">Father's Name</label>
+                                                    <input type="text" required id="father" class="form-control mb-3">
+                                                    <label for="dob">Dob</label>
+                                                    <input type="date" required id="dob" class="form-control mb-3">
+                                                    <select id="choose-type" class="form-select form-select mb-3">
+                                                        <option value="choose type">Choose Type</option>
+                                                        <option value="teacher">Teacher</option>
+                                                        <option value="student">Student</option>
+                                                    </select>
+                                                    <div align="end">
+                                                        <button class="btn btn-info text-white">Register</button>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <label for="mobile">Mobile</label>
+                                                    <input type="number" required id="mobile" class="form-control mb-3">
+                                                    <label for="enrollment">Enrollment</label>
+                                                    <input type="text" required id="enrollment"
+                                                        class="form-control mb-3">
+                                                    <label for="password">password</label>
+                                                    <input type="password" required id="password"
+                                                        class="form-control mb-3">
+                                                    <label for="adress">Adress</label>
+                                                    <textarea id="adress" required class="form-control"></textarea>
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Students & Teachers Registration Form accordion end -->
+                <!-- Students & Teachers Registration Recordind data show-->
+                <div class="row mt-2">
+                    <div class="col-md-12">
+                        <ul class="list-group">
+                            <li class="list-group text-center">
+                                <h3>Students And Teachers Regarding Data</h3>
+                            </li>
+                        </ul>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#registration-data">
+                                        All Type of User Data
+                                    </button>
+                                </h2>
+                                <div class="accordion-collapse collapse" id="registration-data">
+                                    <div class="accordion-body" style="overflow-x: scroll;">
+                                        <table class="table table-responsive table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Profile</th>
+                                                    <th>Name</th>
+                                                    <th style="width: 250px;" class="text-nowrap">Father's Name</th>
+                                                    <th>Dob</th>
+                                                    <th  class="text-nowrap">User Type</th>
+                                                    <th>Mobile</th>
+                                                    <th>Enrollment</th>
+                                                    <th>password</th>
+                                                    <th>Adress</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="registration-data">
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Students & Teachers Registration Recordind show data end-->
+
+
+                <div class="row mt-2">
+                    <div class="col-md-4">
+                        <ul class="list-group">
+                            <li class="list-group text-center">
+                                <h3>Search Result</h3>
+                            </li>
+                        </ul>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#get-result">
+                                        Enter Enrollment
+                                    </button>
+                                </h2>
+                                <div class="accordion-collapse collapse" id="get-result">
+                                    <div class="accordion-body">
+                                        <form class="certificate-form">
+                                            <input type="text" placeholder="Enter Enrollment Number"
+                                                class="form-control mb-3">
+                                            <div align="end">
+                                                <button class="btn text-white " style="background-color: #263159;">Get
+                                                    Result</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- search subject accordion end -->
+                    <!-- search subject accordion start -->
+                    <div class="col-md-8">
+                        <ul class="list-group">
+                            <li class="list-group text-center">
+                                <h3>Search Subject Related Result</h3>
+                            </li>
+                        </ul>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#subject-result">
+                                        Search Subject Result
+                                    </button>
+                                </h2>
+                                <div class="accordion-collapse collapse" id="subject-result">
+                                    <div class="accordion-body">
+                                        <select id="subject-result-el" class="form-select mb-3">
+                                            <option value="choose subject">Choose Subject</option>
+                                        </select>
+                                        <table class="table table-responsive table-s">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Name</th>
+                                                    <th>Enrollment</th>
+                                                    <th>Subject</th>
+                                                    <th class="text-nowrap">Correct Answer</th>
+                                                    <th class="text-nowrap">Wrong Answer</th>
+                                                    <th>Out Of</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="subject-result-data">
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+      <!-- start certificate codding start -->
+      <div class="certificate-main ">
+        <button class="btn certificate-close-btn"><i class="fa fa-times"></i></button>
+        <img src="../dashboard/images/certificate.png">
+        <div class="main-box">
+            <h1 class="text-center brand-name"></h1>
+            <p class="text-center brand-adress"></p>
+            <div class="name-box">
+                <div class="img-box">
+                    <img src="../dashboard/images/user.png" class="cir-profile">
+                </div>
+                <div class="img-box">
+                    <p class="text-center">Name :</p>
+                    <p class="text-center">Father Name :</p>
+                    <p class="text-center">Enrollment :</p>
+
+                </div>
+                <div class="img-box">
+                    <p class="cir-name"></p>
+                    <p class="cir-father"></p>
+                    <p class="cir-enrollment"></p>
+                </div>
+            </div>
+            <h2 class="mt-5">Result :-</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Sr</th>
+                        <th>Subject</th>
+                        <th>MaxMark</th>
+                        <th>Max</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody class="cir-data">   
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>Final Result</th>
+                        <th></th>
+                        <th class="cir-total"></th>
+                        <th class="cir-total"></th>
+                        <th class="cir-total"></th>
+                    </tr>
+                </thead>
+            </table>
+            <div class="signature-box">
+                <div class="sign-box" style="border-right: 2px solid #656464;">
+
+                </div>
+                <div class="sign-box final-result-box">
+                   
+                </div>
+                <div class="sign-box" style="border-left: 2px solid #656464;">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- end certificate codding -->
+      
+    <!-- start model coding -->
+    <div class="modal user-profile-box animate__animated animate__fadeInDown" id="myModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>just for code</h3>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="profile-box mb-3">
+                                <div class="uplode-box">
+                                    <button class="btn"><i class="fa fa-add"></i></button>
+                                    <input type="file" class="uplode-input">
+                                </div>
+                                <br>
+                                <h3>nasir hanif</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                            </div>
+                            <div class="date-box">
+                                <div class="icon-box">
+                                    <i class="fa-solid fa-caret-left mx-2"></i>
+                                    <h3>May</h3>
+                                    <i class="fa-solid fa-caret-right mx-2"></i>
+                                </div>
+                                <br>
+                                <h1>27</h1>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <form class="modal-form">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Name</span>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Father's Name</span>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Dob</span>
+                                    <input type="date" class="form-control">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">User Type</span>
+                                    <select class=" form-select">
+                                        
+                                        <option value="teacher">Teacher</option>
+                                        <option value="student">Student</option>
+                                    </select>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Mobile</span>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Enrollment</span>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">password</span>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Adress</span>
+                                    <textarea id="" class="form-control"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn modal-edit">Edit</button>
+                    <button class="btn bg-info fw-bold modal-update-btn text-white d-none">Update</button>
+                </div>
+            </div>
+        </div>
+        <!-- end model coding -->
+       
+      
+       
+
+
+        <script src="../dashboard/js/dashboard.js"></script>
+
+</body>
+
+</html>
